@@ -22,4 +22,8 @@ describe('ResearchRouteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have 3 routes', () => {
+    expect(component.routes.length).toEqual(3);
+  });
 });
