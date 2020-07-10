@@ -1,19 +1,29 @@
 <div>
     <mat-form-field appearance="fill" class="select">
         <mat-label>Route</mat-label>
-        <mat-select (selectionChange)="routeSelected($event)">
+        <mat-select (selectionChange)="routeSelected($event)" [(ngModel)]="selectedRoute">
             <mat-option *ngFor="let route of routes" [value] = "route.Route" >
                 {{route.Description}}
             </mat-option>
         </mat-select>
     </mat-form-field>
 </div>
-<div>
+<div *ngIf="showDirections">
     <mat-form-field appearance="fill" class="select">
         <mat-label>Direction</mat-label>
-        <mat-select (selectionChange)="directionSelected($event)">
+        <mat-select (selectionChange)="directionSelected($event)" [(ngModel)]="selectedDirection">
             <mat-option *ngFor="let direction of directions" [value] = "direction.Value" >
                 {{direction.Text}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div *ngIf="showStops">
+    <mat-form-field appearance="fill" class="select">
+        <mat-label>Stops</mat-label>
+        <mat-select [(ngModel)]="selectedStop">
+            <mat-option *ngFor="let stop of stops" [value] = "stop.Value" >
+                {{stop.Text}}
             </mat-option>
         </mat-select>
     </mat-form-field>
