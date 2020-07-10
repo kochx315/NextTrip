@@ -19,12 +19,10 @@
     </mat-form-field>
 </div>
 <div *ngIf="showStops">
-    <mat-form-field appearance="fill" class="select">
-        <mat-label>Stops</mat-label>
-        <mat-select [(ngModel)]="selectedStop">
-            <mat-option *ngFor="let stop of stops" [value] = "stop.Value" >
-                {{stop.Text}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div>Stops:</div>
+    <ul>
+        <li *ngFor="let stop of stops">
+            {{stop.Text}}
+        </li>
+    </ul>
 </div>
