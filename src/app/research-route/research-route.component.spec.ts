@@ -4,6 +4,7 @@ import { ResearchRouteComponent } from './research-route.component';
 import { RouteService } from '../services/route.service';
 import { Route } from '../objects/Route';
 import { of } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ResearchRouteComponent', () => {
   let component: ResearchRouteComponent;
@@ -11,14 +12,15 @@ describe('ResearchRouteComponent', () => {
   let service: RouteService;
 
   let mockRoutes: Route[] = [
-    {value: 'route-1', displayValue: 'Route 1'},
-    {value: 'route-2', displayValue: 'Route 2'},
-    {value: 'route-3', displayValue: 'Route 3'}
+    {Description: 'METRO Blue Line', ProviderID: '8', Route: '901'},
+    {Description: 'METRO Green Line', ProviderID: '8', Route: '902'},
+    {Description: 'METRO Red Line', ProviderID: '9', Route: '903'}
   ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResearchRouteComponent ]
+      declarations: [ ResearchRouteComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));

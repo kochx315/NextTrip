@@ -1,4 +1,5 @@
 export class Route{
-    value: string;
-    displayValue: string;
+    Description: string;
+    ProviderID: string;
+    Route: string;
 }

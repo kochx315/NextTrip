@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Route } from '../objects/Route';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RouteService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllRoutes(): Observable<Route[]> {
-    let routes: Route[] = [
-      {value: 'route-1', displayValue: 'Route 1'},
-      {value: 'route-2', displayValue: 'Route 2'},
-      {value: 'route-3', displayValue: 'Route 3'}
-    ];
-
-    return of(routes);
+    return this.http.get<Route[]>('https://svc.metrotransit.org/NexTrip/Routes?format=json');
   }
 }

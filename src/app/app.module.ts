@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 import { ResearchRouteComponent } from './research-route/research-route.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ResearchRouteComponent } from './research-route/research-route.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

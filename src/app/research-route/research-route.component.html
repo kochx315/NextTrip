@@ -1,8 +1,8 @@
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" class="routeSelect">
     <mat-label>Route</mat-label>
     <mat-select>
-        <mat-option *ngFor="let route of routes" [value] = "route.value">
-            {{route.displayValue}}
+        <mat-option *ngFor="let route of routes" [value] = "route.Route">
+            {{route.Description}}
         </mat-option>
     </mat-select>
 </mat-form-field>
