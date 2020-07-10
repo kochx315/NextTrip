@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '../objects/Route';
+import { Direction } from '../objects/Direction';
 import { RouteService } from '../services/route.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { RouteService } from '../services/route.service';
 })
 export class ResearchRouteComponent implements OnInit {
   routes: Route[] = [];
+  directions: Direction[] = [];
 
   constructor(private routeService: RouteService) { }
 
@@ -18,4 +20,13 @@ export class ResearchRouteComponent implements OnInit {
     });
   }
 
+  routeSelected(event): void {
+    this.routeService.getDirections(event.value).subscribe(directions => {
+      this.directions = directions;
+    });
+  }
+
+  directionSelected(event): void {
+      
+    }
 }
