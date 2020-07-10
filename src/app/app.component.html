@@ -1,8 +1,13 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img class="logo" alt="Metro Transit Logo" src="../assets/MetroTransitLogo.svg" />
-  <span><a routerLink="/research-a-route">Research a Route</a></span>
-    <div class="spacer"></div>
+  <a routerLink="/home">
+    <img class="logo" alt="Metro Transit Logo" src="../assets/MetroTransitLogo.svg" />
+  </a>
+  <div class="spacer"></div>
+  <span>
+    <a routerLink="/research-a-route">Research a Route</a>
+  </span>
+  <div class="spacer"></div>
 </div>
 <div class="content" role="main">
   <router-outlet></router-outlet>
